@@ -1,0 +1,19 @@
+<p>edit-user works!</p>
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th>name</th>
+    <th>address</th>
+
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><input type="text" [(ngModel)]="user.name" name="name"></td>
+    <td><input type="text" [(ngModel)]="user.address" name="address"></td>
+     <td><button class="btn btn-secondary" (click)="editUser(user.id)">Update</button></td>
+  </tr>
+  </tbody>
+</table>

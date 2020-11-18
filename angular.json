@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "case5-fe"
+    }
+  },
+  "defaultProject": "case5-fe",
+  "cli": {
+    "analytics": "b413b56c-bd6d-467b-bd2f-621d1e52c822"
+  }
 }
