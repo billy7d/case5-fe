@@ -15,7 +15,7 @@ export class EditUserComponent implements OnInit {
   };
 
 
-  constructor(private userService:UserService, private router:Router,private actRouter:ActivatedRoute) {
+  constructor(private userService:UserService, private actRouter:ActivatedRoute, private router:Router) {
     this.idUser = parseInt(this.actRouter.snapshot.params.id);
     this.getUserById(this.idUser)
    }
@@ -24,7 +24,7 @@ export class EditUserComponent implements OnInit {
   }
 
   getUserById(id) {
-    this.userService.getUpdateFormUser(id)
+    this.userService.getUserById(id)
         .then(res => {
           this.user = res;
 
@@ -36,7 +36,7 @@ export class EditUserComponent implements OnInit {
     this.userService.updateUser(id,this.user)
     .then(res => {
       this.user = res;
-
+      this.router.navigateByUrl('/users');
     }, error => window.alert('errorr'));
   }
 }

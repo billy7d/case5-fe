@@ -2,10 +2,9 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http'
-import { Observable } from 'rxjs';
 import { stringify } from '@angular/compiler/src/util';
-import { resolve } from 'dns';
-import { rejects } from 'assert';
+
+
 
 
 @Injectable({
@@ -19,7 +18,8 @@ export class UserService {
   getAllUser = (): Promise<Object> => {
     return new Promise((resolve,rejects) =>{
       let url ="http://localhost:8080/users"
-      this.http.get(url).subscribe(res =>{
+      this.http.get(url)
+      .subscribe(res =>{
         resolve(res);
       }, err =>{
         rejects(err);
@@ -44,7 +44,7 @@ export class UserService {
 
     deleteUser(id:number):Promise<Object>{
       return new Promise((resolve, reject) => {
-        let url = "http://localhost:8080/users/delete/" +id;
+        let url = `http://localhost:8080/users/delete/`+id;
         this.http.delete(url)
             .subscribe(res => {
                 resolve(res);
@@ -54,7 +54,7 @@ export class UserService {
     })
     }
 
-    getUpdateFormUser(id):Promise<Object> {
+    getUserById(id):Promise<Object> {
       return new Promise((resolve, reject) => {
         let url = "http://localhost:8080/users/"+id;
         this.http.get(url)

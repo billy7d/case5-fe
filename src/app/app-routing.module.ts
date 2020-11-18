@@ -10,7 +10,8 @@ const routes: Routes = [
   {path:'users',component:ListUserComponent},
   {path:'users/details/:id',component:DetailedUserComponent},
   {path:'users/create',component:CreateUserComponent},
-  {path:'users/edit/:id',component:EditUserComponent}
+  {path:'users/edit/:id',component:EditUserComponent},
+  {path:'users/view/:id',component:DetailedUserComponent}
 
 ];
 
